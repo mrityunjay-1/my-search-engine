@@ -20,7 +20,7 @@ const SearchResultPage = () => {
         setinput(query);
     
         // let's fetch the data using axios
-        /*async function fetchdata(){
+        async function fetchdata(){
             let result = await axios.get(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBCbUkPZaZiw0Wb1neQV_RnIiLEgYCh1Tc&cx=12710e7109467d160&q=${query}`);
             return result;
         }
@@ -50,7 +50,7 @@ const SearchResultPage = () => {
                 set_youtube_search_result(result.data.items);
             })
             .catch(error => console.log(error));
-        console.log("This is Youtube fetch data modules under useEffect");*/
+        console.log("This is Youtube fetch data modules under useEffect");
     }, [])
    
 
@@ -73,7 +73,7 @@ const SearchResultPage = () => {
         
         // fetching the search data from the google
         
-        /*let result = await axios.get(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBCbUkPZaZiw0Wb1neQV_RnIiLEgYCh1Tc&cx=12710e7109467d160&q=${func_query}`);
+        let result = await axios.get(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBCbUkPZaZiw0Wb1neQV_RnIiLEgYCh1Tc&cx=12710e7109467d160&q=${func_query}`);
         console.log(result.data);
         set_search_result(result.data.items);
     
@@ -96,15 +96,16 @@ const SearchResultPage = () => {
                 // console.log(result);
                 set_youtube_search_result(result.data.items);
             })
-            .catch(error => console.log(error));*/
+            .catch(error => console.log(error));
             
     }
     
     return (
     <>
+        <span className="logo1" style={{fontSize: '3rem', width: '100%', fontWeight: 'bold', color: 'grey', textAlign: 'center'}}> searchIn.com </span>
         <div className="topSearchInput">
-            <div style={{display: 'flex', alignItems: 'center', width: '60%'}}> <span style={{fontSize: '3rem', width: '30%', fontWeight: 'bold', color: 'grey'}}> SearchIn.com </span> <input type="text"  value={input} onChange={(e) => {setinput(e.target.value)}} id="input_field"/></div>
-            <div style={{width: '40%'}}><button onClick={() => { fetch_data(input) }} id="button1" > Search </button></div>
+            <div style={{display: 'flex', alignItems: 'center', width: '60%'}}> <span className="logo2" style={{fontSize: '3rem', width: '30%', fontWeight: 'bold', color: 'grey'}}> SearchIn.com </span> <input type="text"  value={input} onChange={(e) => {setinput(e.target.value)}} id="input_field"/></div>
+            <div class="search_button" style={{width: '40%'}}><button onClick={() => { fetch_data(input) }} id="button1" > Search </button></div>
         </div>
         <div className="categories" >
                 <div>  <a href={`https://picsum.photos`} > All  </a> </div>
@@ -118,15 +119,15 @@ const SearchResultPage = () => {
         <div className="main_div">
         
         <div className="resultComp">
-            <div className="youtube_slider"  style={{display: 'flex', width: '100%', height: '40%', overflowX: 'scroll'}}>
+            <div className="youtube_slider"  style={{display: 'flex', width: '100%', height: '40%', overflowX: 'scroll', padding: '1rem 0rem'}}>
                 {
                     youtube_search_result.map( videos => {
                         return (
                               
-                            <div style={{width: '25%', flexShrink: '0', position: 'relative'}}> 
+                            <div className="youtube_videos_boxes"> 
                                 <img alt="youtube_thumbnails" src={videos.snippet.thumbnails.medium.url} style={{width: '100%', height: 'auto'}}/>
-                                <h2 style={{padding: '1.2rem 1rem 0rem 0rem'}}>{ videos.snippet.title }</h2>
-                                <a style={{position: 'absolute', bottom: '0%'}} href={"https://www.youtube.com/embed/" + videos.id.videoId} > Watch </a>
+                                <h2 style={{padding: '1.2rem 1rem 0rem 1rem'}}>{ videos.snippet.title }</h2>
+                                <a style={{position: 'absolute', bottom: '3%', right: '10%' , fontSize: '1.8rem', textDecoration: 'none'}} href={"https://www.youtube.com/embed/" + videos.id.videoId} > Watch </a>
                             </div>
                             
                         );
@@ -140,7 +141,7 @@ const SearchResultPage = () => {
                 return (
                     <>
                     <a href={`${results.link}`} style={{textDecoration: 'none', color: 'black'}}>
-                        <div className="result_divs" style={{border: '1px solid lightgrey', borderRadius: '5px', boxShadow: '0.5px 0.5px 3px lightgrey'}}>   
+                        <div className="result_divs" style={{border: '1px solid lightgrey', borderRadius: '5px', boxShadow: '0.5px 0.5px 3px lightgrey', overflow: 'hidden'}}>   
                             <p style={{fontSize: '1.3rem', color: 'green'}}> {results.link} </p>
                             <p style={{fontSize: '2.3rem', color: 'blue', padding: '1rem 0rem'}}> {results.title} </p>
                             <p style={{fontSize: '1.6rem', color: 'grey'}}> {results.snippet} </p>
