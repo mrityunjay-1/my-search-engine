@@ -1,0 +1,59 @@
+html{
+    font-size: 62.5%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'helvetica';
+}
+
+.main_div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+.resultComp{
+    width: 55%;
+}
+.result_divs{
+    margin: 0.5rem 0rem;
+    padding: 1.5rem;
+}
+.side_div{
+    width: 25%;
+    padding: 1rem;
+    background-color: cyan;
+    height: 500px;
+    margin: 1.5rem;
+}
+
+.youtube_slider::-webkit-scrollbar{
+    display: none;
+}
+.youtube_slider > div{
+    margin: 1rem;
+}
+
+.topSearchInput{
+    display: flex;
+    width: 100%;
+    padding: 2rem;
+    padding-left: 10%;
+}
+
+.topSearchInput div{
+    width: 50%;
+}
+.topSearchInput input{
+    width: 90%;
+    padding: 1rem;
+    font-size: 1.6rem;
+}
+.topSearchInput button{
+    padding: 1rem;
+    font-size: 1.6rem;
+}

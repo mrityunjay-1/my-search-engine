@@ -17,6 +17,14 @@ const HomePage = () => {
             }
         })
     
+        console.log("store: ", store.getState());
+        if(typeof Storage !== undefined){
+            localStorage.setItem("store", JSON.stringify(store.getState()[0]));
+        }
+        else{
+            console.log("Failed, Browser does not support this feature.");
+        }
+    
         e.preventDefault();
     
         history.push('/searchbar_with_searchresults');
