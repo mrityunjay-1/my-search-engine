@@ -26,7 +26,7 @@ body{
 .side_div{
     width: 25%;
     padding: 1rem;
-    background-color: cyan;
+    /*background-color: cyan;*/
     height: 500px;
     margin: 1.5rem;
 }
@@ -42,18 +42,63 @@ body{
     display: flex;
     width: 100%;
     padding: 2rem;
-    padding-left: 10%;
+    padding-left: 2%;
 }
 
-.topSearchInput div{
-    width: 50%;
-}
 .topSearchInput input{
-    width: 90%;
-    padding: 1rem;
+    width: 65%;
+    padding: 1rem 2rem;
     font-size: 1.6rem;
+    border-radius: 5rem;
+    outline: none;
+    border: 1px solid grey;
 }
+.topSearchInput input:focus{
+    box-shadow: 1px 1px 3px lightgrey;
+    border: 2px solid darkblue;
+}
+
 .topSearchInput button{
-    padding: 1rem;
+    padding: 1rem 3rem;
     font-size: 1.6rem;
+    border-radius: 5rem;
+    border: 2px solid darkblue;
+    background: blue;
+    color: white;
+}
+
+.categories{
+    display: flex;
+    overflow-x: scroll;
+    padding-left: 12%;
+}
+.categories > div{
+    width: 100px;
+    flex-shrink: 0;
+    text-align :center;
+    padding: 0rem 0rem 0.5rem 0rem;
+}
+.categories div a{
+    text-decoration: none;
+    color: grey;
+    font-size: 2.2rem;
+}
+.categories::-webkit-scrollbar{
+    display: none;
+}
+
+.categories::-moz-scrollbar{
+    display: none;
+}
+
+@media(max-width: 760px){
+    .categories{
+        padding-left: 0%;
+    }
+    span{
+        display: none;
+    }
+    .topSearchInput input{
+        width: 99%;    
+    }
 }
