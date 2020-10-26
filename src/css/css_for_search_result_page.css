@@ -1,0 +1,36 @@
+
+.main_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.resultComp{
+    width: 55%;
+}
+.result_divs{
+    margin: 0.5rem 0rem;
+    padding: 1.5rem;
+}
+.side_div{
+    width: 25%;
+    padding: 1rem;
+    /*background-color: cyan;*/
+    margin: 1.5rem;
+}
+
+@media(max-width: 760px){
+        
+    .main_div{
+        flex-flow: column;
+        width: 100%;
+    }
+    .resultComp{
+        order: 2;
+        width: 100%;
+    }
+    .side_div{
+        order: 1;
+        width: 100%;
+    }
+}

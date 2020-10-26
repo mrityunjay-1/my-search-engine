@@ -10,26 +10,6 @@ body{
     font-family: 'helvetica';
 }
 
-.main_div{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-}
-.resultComp{
-    width: 55%;
-}
-.result_divs{
-    margin: 0.5rem 0rem;
-    padding: 1.5rem;
-}
-.side_div{
-    width: 25%;
-    padding: 1rem;
-    /*background-color: cyan;*/
-    height: 500px;
-    margin: 1.5rem;
-}
 .youtube_slider{
     scrollbar-width: none;
 }

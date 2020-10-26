@@ -15,6 +15,9 @@ ReactDOM.render(
                 <Route path="/searchbar_with_searchresults" exact>
                     <SearchResultPage />
                 </Route>
+                <Route path="/videos" exact>
+                    <videos />
+                </Route>
             </Switch>
         </Router>
     </>, document.getElementById("root")

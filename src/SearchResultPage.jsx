@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import store from './redux_files/store';
 import youtube from './axios_create/youtube.js';
 import axios from 'axios';
+import './css/css_for_search_result_page.css';
 // import store from './redux_files/store';
 
 
@@ -67,14 +68,14 @@ const SearchResultPage = () => {
         console.log(store.getState());
         // let's update it to the localStorage
 
-        localStorage.setItem('store', JSON.stringify(store.getState()));
+        localStorage.setItem('store', JSON.stringify(store.getState()[0]));
         console.log(localStorage.getItem('store'));
 
 
         // fetching the search data from the google
 
         let result = await axios.get(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBCbUkPZaZiw0Wb1neQV_RnIiLEgYCh1Tc&cx=12710e7109467d160&q=${func_query}`);
-        console.log(result.data);
+        //console.log(result.data);
         set_search_result(result.data.items);
 
         // now let's fetch some data from the Youtube for the queries
@@ -110,7 +111,7 @@ const SearchResultPage = () => {
             <div className="categories" >
                 <div>  <a href={`https://picsum.photos`} > All  </a> </div>
                 <div>  <a href={`https://picsum.photos`} > search  </a>  </div>
-                <div>  <a href={`https://picsum.photos`} > videos  </a>  </div>
+                <div>  <a href={`http://localhost:3000/videos`} > videos  </a>  </div>
                 <div>  <a href={`https://picsum.photos`} > news  </a>  </div>
                 <div>  <a href={`https://picsum.photos`} > map  </a>  </div>
 
@@ -140,11 +141,11 @@ const SearchResultPage = () => {
                         search_result.map((results) => {
                             return (
                                 <>
-                                    <a href={`${results.link}`} style={{ textDecoration: 'none', color: 'black' }}>
+                                    <a href={`${results.link}`} className="anchortags" style={{ textDecoration: 'none', color: 'black' }}>
                                         <div className="result_divs" style={{ border: '1px solid lightgrey', borderRadius: '5px', boxShadow: '0.5px 0.5px 3px lightgrey', overflow: 'hidden' }}>
-                                            <p style={{ fontSize: '1.3rem', color: 'green' }}> {results.link} </p>
-                                            <p style={{ fontSize: '2.3rem', color: 'blue', padding: '1rem 0rem' }}> {results.title} </p>
-                                            <p style={{ fontSize: '1.6rem', color: 'grey' }}> {results.snippet} </p>
+                                            <p style={{ fontSize: '1.2rem', color: 'green' }}> {results.link} </p>
+                                            <p style={{ fontSize: '1.9rem', color: 'blue', padding: '1rem 0rem' }}> {results.title} </p>
+                                            <p style={{ fontSize: '1.4rem', color: 'grey' }}> {results.snippet} </p>
                                         </div>
                                     </a>
                                 </>);
@@ -153,6 +154,10 @@ const SearchResultPage = () => {
                 </div>
                 <div className="side_div"></div>
             </div>
+
+
+
+            <div> This is Going to be the Footer. </div>
 
         </>
     );
