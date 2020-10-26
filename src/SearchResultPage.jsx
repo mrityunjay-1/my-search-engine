@@ -3,6 +3,7 @@ import store from './redux_files/store';
 import youtube from './axios_create/youtube.js';
 import axios from 'axios';
 import './css/css_for_search_result_page.css';
+//import TopSearchElements from './TopSearchElements.js';
 // import store from './redux_files/store';
 
 
@@ -10,6 +11,7 @@ const SearchResultPage = () => {
     const [search_result, set_search_result] = useState([]);
     const [youtube_search_result, set_youtube_search_result] = useState([]);
     const [input, setinput] = useState("");
+    const [wikipedia_result, set_wikipedia_result] = useState("");
 
     console.log("local Storage = ", JSON.parse(localStorage.getItem("store")).query);
     let query = JSON.parse(localStorage.getItem("store")).query;
@@ -52,6 +54,16 @@ const SearchResultPage = () => {
             })
             .catch(error => console.log(error));
         console.log("This is Youtube fetch data modules under useEffect");
+
+
+
+        // fething data for the position of wikipedia           SIDE-DIV
+
+        fetch(`http://localhost:8080/wikipedia/${query}`)
+            .then(response => response.text())
+            .then(text_result => set_wikipedia_result(text_result))
+            .catch(error => console.log(error));
+
     }, [])
 
 
@@ -99,6 +111,11 @@ const SearchResultPage = () => {
             })
             .catch(error => console.log(error));
 
+        fetch(`http://localhost:8080/wikipedia/${query}`)
+            .then(response => response.text())
+            .then(text_result => set_wikipedia_result(text_result))
+            .catch(error => console.log(error));
+
     }
 
     return (
@@ -127,7 +144,7 @@ const SearchResultPage = () => {
 
                                     <div className="youtube_videos_boxes">
                                         <img alt="youtube_thumbnails" src={videos.snippet.thumbnails.medium.url} style={{ width: '100%', height: 'auto' }} />
-                                        <h2 style={{ padding: '1.2rem 1rem 0rem 1rem' }}>{videos.snippet.title}</h2>
+                                        <h2 style={{ fontSize: '1.2rem', padding: '1.2rem 1rem 0rem 1rem' }}>{videos.snippet.title}</h2>
                                         <a style={{ position: 'absolute', bottom: '3%', right: '10%', fontSize: '1.8rem', textDecoration: 'none' }} href={"https://www.youtube.com/embed/" + videos.id.videoId} > Watch </a>
                                     </div>
 
@@ -135,6 +152,7 @@ const SearchResultPage = () => {
                             })
                         }
                     </div>
+                    <div> give feedback , report bugs/issues</div>
 
                     {
 
@@ -152,7 +170,10 @@ const SearchResultPage = () => {
                         })
                     }
                 </div>
-                <div className="side_div"></div>
+                <div className="side_div" style={{ display: 'flex', flexFlow: 'column' }}>
+                    <div style={{ height: '38rem', flexGrow: '1' }}> {wikipedia_result} </div>
+                    <div style={{ flexGrow: '1', backgroundColor: 'white' }}> <a href={`https://en.wikipedia.org/wiki/${query}`} target="_blank"> Show More </a> </div>
+                </div>
             </div>
 
 

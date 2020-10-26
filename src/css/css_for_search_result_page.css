@@ -2,7 +2,7 @@
 .main_div{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
 }
 .resultComp{
@@ -13,10 +13,18 @@
     padding: 1.5rem;
 }
 .side_div{
-    width: 25%;
-    padding: 1rem;
+    width: 35%;
+    padding: 1rem 2rem;
     /*background-color: cyan;*/
     margin: 1.5rem;
+    height: 41rem;
+    overflow: hidden;
+    font-size: 1.6rem;
+    border: 1px solid lightgrey;
+    white-space: normal;
+    text-overflow: clip;
+    border-radius: 0.5rem;
+    box-shadow: 0.51px 0.51px 5px 5px lightgrey;
 }
 
 @media(max-width: 760px){
@@ -31,6 +39,6 @@
     }
     .side_div{
         order: 1;
-        width: 100%;
+        width: 95%;
     }
 }

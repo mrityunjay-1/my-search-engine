@@ -15,7 +15,13 @@ body{
 }
 
 .youtube_slider::-webkit-scrollbar{
-    display: none;
+    height: 1rem;
+    background-color: grey;
+    border-radius: 1rem;
+}
+.youtube_slider::-webkit-scrollbar-thumb{
+    background-color: orange;
+    border-radius: 1rem;
 }
 .youtube_slider > div{
     margin-right: 1.2rem;
