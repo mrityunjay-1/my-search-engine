@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e6e6e6;
+    background-color:#708090;
 }
 
 .container-1{
@@ -19,38 +19,70 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    align-items: center;
     padding: 3% 0;
-}
-.contain-input-tags div:nth-child(1){
-    padding: 0.5rem 1rem;
-}
-.contain-input-tags div:nth-child(2){
-    padding: 0.5rem;
 }
 
 input{
+    border-radius: 0;
     width: 100%;
-    border: 2px solid grey;
-    border-radius: 2rem;
     font-size: 1.6rem;
-    outline: none;
     padding: 1rem;
+    outline: none;
     background-color: white;
+    border-top: 2px  solid orange;
+    border-right: 0px  solid orange;
+    border-bottom: 2px  solid orange;
+    border-left: 2px  solid orange;
 }
-input:hover{
+.homepage_button{
+    
+    cursor: pointer;
+    border-radius: 0;
+    width: 100%;
+    padding-top: 12%;
+    padding-bottom: 8%;
+    background-color: white;
+    outline: none;
+    
+    border-top: 2px  solid orange;
+    border-right: 2px  solid orange;
+    border-bottom: 2px  solid orange;
+    border-left: 0px  solid orange;
+}
+
+/*input:hover{
     box-shadow: inset 2px 1px 6px grey;
 }
 input:focus{
     box-shadow: inset 2px 1px 6px grey;
+}*/
+
+.logo_here{
+    animation: anim3 3s linear infinite;
+    animation-direction: alternate;
+}
+@keyframes anim3{
+    from {
+        transform: scale(0.7);
+    }
+    to{
+        transform: scale(1.1);
+    }
 }
 
 @media(max-width: 760px){
+    
     .container-1{
         width: 100%;
         box-sizing: border-box;
     }
     input{
-        padding: 0.5rem;
+        padding: 3%;
+    }
+    .homepage_button{
+        padding-top: 0.5rem;
+        padding-bottom: 0.4rem;
     }
     
 }

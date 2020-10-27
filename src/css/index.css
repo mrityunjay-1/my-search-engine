@@ -32,8 +32,20 @@ body{
     width: 100%;
     padding: 2rem;
     padding-left: 2%;
+    align-items: center;
 }
 
+.topSearchInput-child1{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    padding-right: 1rem;
+}
+
+.search_button{
+    width: 40%;
+     padding-left: 2%;
+}
 .youtube_videos_boxes{
     width: 25%;
     height: 23rem;
@@ -106,8 +118,15 @@ body{
     }
     .logo1{
         display: block;
-        text-align :center;
+        text-align: center;
     }
+    .topSearchInput-child1{
+        width: 85%;
+    }
+    .search_button{
+        width: 15%;
+    }
+    
     .search_button{
         display: flex;
         justify-content: center;

@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import store from './redux_files/store';
 import youtube from './axios_create/youtube.js';
 import axios from 'axios';
+import FeedbackPage from './FeedbackPage';
+import Footer from './Footer';
 import './css/css_for_search_result_page.css';
+import logo2 from './logo2.png';
 //import TopSearchElements from './TopSearchElements.js';
 // import store from './redux_files/store';
 
@@ -61,7 +64,12 @@ const SearchResultPage = () => {
 
         fetch(`http://localhost:8080/wikipedia/${query}`)
             .then(response => response.text())
-            .then(text_result => set_wikipedia_result(text_result))
+            .then((text_result) => {
+                if (text_result !== "") {
+                    document.getElementById("side_div_wikipedia").style.display = "flex";
+                }
+                set_wikipedia_result(text_result)
+            })
             .catch(error => console.log(error));
 
     }, [])
@@ -120,10 +128,10 @@ const SearchResultPage = () => {
 
     return (
         <>
-            <span className="logo1" style={{ fontSize: '3rem', width: '100%', fontWeight: 'bold', color: 'grey', textAlign: 'center' }}> searchIn.com </span>
+            <center><img className="logo1" src={logo2} alt="logo" style={{ maxWidth: '60%', padding: '1rem' }} /></center>
             <div className="topSearchInput">
-                <div style={{ display: 'flex', alignItems: 'center', width: '60%' }}> <span className="logo2" style={{ fontSize: '3rem', width: '30%', fontWeight: 'bold', color: 'grey' }}> SearchIn.com </span> <input type="text" value={input} onChange={(e) => { setinput(e.target.value) }} id="input_field" /></div>
-                <div class="search_button" style={{ width: '40%' }}><button onClick={() => { fetch_data(input) }} id="button1" > Search </button></div>
+                <div className="topSearchInput-child1"> <img className="logo2" src={logo2} alt="logo" style={{ maxWidth: '30%', padding: '1rem' }} /> <input type="text" style={{ width: '100%' }} value={input} onChange={(e) => { setinput(e.target.value) }} id="input_field" /></div>
+                <div className="search_button" ><button onClick={() => { fetch_data(input) }} id="button1" > Search </button></div>
             </div>
             <div className="categories" >
                 <div>  <a href={`https://picsum.photos`} > All  </a> </div>
@@ -152,7 +160,8 @@ const SearchResultPage = () => {
                             })
                         }
                     </div>
-                    <div> give feedback , report bugs/issues</div>
+                    <FeedbackPage />
+                    <div> <button onClick={() => { document.querySelector("#feedback-container").style.display = "flex"; }} style={{ background: 'none', border: 'none', outline: 'none', cursor: 'pointer' }}> Give Feedback / Report Issues </button></div>
 
                     {
 
@@ -170,16 +179,16 @@ const SearchResultPage = () => {
                         })
                     }
                 </div>
-                <div className="side_div" style={{ display: 'flex', flexFlow: 'column' }}>
-                    <div style={{ height: '38rem', flexGrow: '1' }}> {wikipedia_result} </div>
-                    <div style={{ flexGrow: '1', backgroundColor: 'white' }}> <a href={`https://en.wikipedia.org/wiki/${query}`} target="_blank"> Show More </a> </div>
+                <div className="side_div" >
+                    <div id="side_div_wikipedia" style={{ display: 'none', flexGrow: '1', overflowX: 'hidden', overflowY: 'scroll' }}> <p> {wikipedia_result} </p> </div>
+                    <div id="side_div_wikipedia" style={{ display: 'none', height: '4rem', flexGrow: '1', backgroundColor: 'white' }}> <a href={`https://en.wikipedia.org/wiki/${query}`} target="_blank"> Show More </a> </div>
                 </div>
             </div>
 
 
 
-            <div> This is Going to be the Footer. </div>
 
+            <Footer />
         </>
     );
 }
