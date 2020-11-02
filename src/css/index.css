@@ -1,0 +1,143 @@
+html{
+    font-size: 62.5%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'helvetica';
+}
+
+.youtube_slider{
+    scrollbar-width: none;
+}
+
+.youtube_slider::-webkit-scrollbar{
+    height: 1rem;
+    background-color: grey;
+    border-radius: 1rem;
+}
+.youtube_slider::-webkit-scrollbar-thumb{
+    background-color: orange;
+    border-radius: 1rem;
+}
+.youtube_slider > div{
+    margin-right: 1.2rem;
+}
+
+.topSearchInput{
+    display: flex;
+    width: 100%;
+    padding: 2rem;
+    padding-left: 2%;
+    align-items: center;
+}
+
+.topSearchInput-child1{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    padding-right: 1rem;
+}
+
+.search_button{
+    width: 40%;
+     padding-left: 2%;
+}
+.youtube_videos_boxes{
+    width: 25%;
+    height: 23rem;
+    flex-shrink: 0;
+    position: relative;
+    border: 1px solid lightgrey;
+    box-shadow: 1px 1px 3px lightgrey;
+    
+}
+
+.topSearchInput input{
+    width: 65%;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    border-radius: 5rem;
+    outline: none;
+    border: 1px solid grey;
+}
+.topSearchInput input:focus{
+    box-shadow: 1px 1px 3px lightgrey;
+    border: 2px solid darkblue;
+}
+
+.topSearchInput button{
+    padding: 1rem 3rem;
+    font-size: 1.6rem;
+    border-radius: 5rem;
+    border: 2px solid darkblue;
+    background: blue;
+    color: white;
+    outline: none;
+}
+
+.categories{
+    display: flex;
+    overflow-x: scroll;
+    padding-left: 12%;
+    scrollbar-width: none;
+}
+.categories > div{
+    width: 100px;
+    flex-shrink: 0;
+    text-align :center;
+    padding: 0rem 0rem 0.5rem 0rem;
+}
+.categories div a{
+    text-decoration: none;
+    color: grey;
+    font-size: 1.7rem;
+}
+.categories::-webkit-scrollbar{
+    display: none;
+}
+
+.categories::-moz-scrollbar{
+    display: none;
+}
+.logo1{
+    display: none;
+}
+@media(max-width: 760px){
+    .categories{
+        padding-left: 0%;
+    }
+    .logo2{
+        display: none;
+    }   
+    .topSearchInput input{
+        width: 99%;    
+    }
+    .logo1{
+        display: block;
+        text-align: center;
+    }
+    .topSearchInput-child1{
+        width: 85%;
+    }
+    .search_button{
+        width: 15%;
+    }
+    
+    .search_button{
+        display: flex;
+        justify-content: center;
+    }
+    .topSearchInput input{
+    padding: 0.7rem 2rem;
+        font-size: 1.4rem;
+    }
+
+    .topSearchInput button{
+    padding: 0.7rem 2rem;
+        font-size: 1.4rem;
+    }
+}

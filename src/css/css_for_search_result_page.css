@@ -1,0 +1,58 @@
+
+.main_div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+.resultComp{
+    width: 55%;
+}
+.result_divs{
+    margin: 0.5rem 0rem;
+    padding: 1.5rem;
+}
+.side_div{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    padding: 1rem 2rem;
+    /*background-color: cyan;*/
+    margin: 1.5rem;
+    height: 41rem;
+    font-size: 1.6rem;
+    border: 1px solid lightgrey;
+    border-radius: 0.5rem;
+    box-shadow: 0.51px 0.51px 1.5px 2px lightgrey;
+}
+
+
+@media(max-width: 760px){
+        
+    .main_div{
+        flex-flow: column;
+        width: 100%;
+    }
+    .resultComp{
+        order: 2;
+        width: 100%;
+    }
+    .side_div{
+        order: 1;
+        width: 93%;
+    }
+}
+
+
+/*************             FEEDBACK PAGE *******************/
+#feedback-container{
+    animation: anim 0.5s linear;
+}
+@keyframes anim{
+    from {
+        transform: scale(0.1);
+    }
+    to{
+        transform: scale(1);
+    }
+}
