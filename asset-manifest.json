@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.11815f3c.chunk.css",
-    "main.js": "/static/js/main.25087150.chunk.js",
-    "main.js.map": "/static/js/main.25087150.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.d596cfc0.js",
-    "runtime-main.js.map": "/static/js/runtime-main.d596cfc0.js.map",
-    "static/js/2.821bbcc2.chunk.js": "/static/js/2.821bbcc2.chunk.js",
-    "static/js/2.821bbcc2.chunk.js.map": "/static/js/2.821bbcc2.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.c0ea90b91778c5f0987955adb349dc6a.js": "/precache-manifest.c0ea90b91778c5f0987955adb349dc6a.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.11815f3c.chunk.css.map": "/static/css/main.11815f3c.chunk.css.map",
-    "static/js/2.821bbcc2.chunk.js.LICENSE.txt": "/static/js/2.821bbcc2.chunk.js.LICENSE.txt"
+    "main.css": "/my-search-engine/static/css/main.84ca6f9e.chunk.css",
+    "main.js": "/my-search-engine/static/js/main.73872bfb.chunk.js",
+    "main.js.map": "/my-search-engine/static/js/main.73872bfb.chunk.js.map",
+    "runtime-main.js": "/my-search-engine/static/js/runtime-main.3d78dc48.js",
+    "runtime-main.js.map": "/my-search-engine/static/js/runtime-main.3d78dc48.js.map",
+    "static/js/2.49f70a1b.chunk.js": "/my-search-engine/static/js/2.49f70a1b.chunk.js",
+    "static/js/2.49f70a1b.chunk.js.map": "/my-search-engine/static/js/2.49f70a1b.chunk.js.map",
+    "index.html": "/my-search-engine/index.html",
+    "precache-manifest.dde015aa8a0c85b4c8f8cfd57346fc87.js": "/my-search-engine/precache-manifest.dde015aa8a0c85b4c8f8cfd57346fc87.js",
+    "service-worker.js": "/my-search-engine/service-worker.js",
+    "static/css/main.84ca6f9e.chunk.css.map": "/my-search-engine/static/css/main.84ca6f9e.chunk.css.map",
+    "static/js/2.49f70a1b.chunk.js.LICENSE.txt": "/my-search-engine/static/js/2.49f70a1b.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/my-search-engine/static/media/logo.2410bd35.png",
+    "static/media/logo2.png": "/my-search-engine/static/media/logo2.5a843f12.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d596cfc0.js",
-    "static/js/2.821bbcc2.chunk.js",
-    "static/css/main.11815f3c.chunk.css",
-    "static/js/main.25087150.chunk.js"
+    "static/js/runtime-main.3d78dc48.js",
+    "static/js/2.49f70a1b.chunk.js",
+    "static/css/main.84ca6f9e.chunk.css",
+    "static/js/main.73872bfb.chunk.js"
   ]
 }
