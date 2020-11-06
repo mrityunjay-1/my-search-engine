@@ -1,5 +1,6 @@
 {
   "name": "my-srearch-engine2",
+  "homepage" : "https://mrityunjay-1.github.io/my-search-engine",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
