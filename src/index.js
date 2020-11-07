@@ -9,7 +9,7 @@ ReactDOM.render(
     <>
         <Router>
             <Switch>
-                <Route path="/" exact>
+                <Route path="/my-search-engine" exact>
                     <HomePage />
                 </Route>
                 <Route path="/searchbar_with_searchresults" exact>
