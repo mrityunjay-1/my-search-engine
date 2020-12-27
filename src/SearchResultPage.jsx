@@ -27,7 +27,7 @@ const SearchResultPage = () => {
 
         // let's fetch the data using axios
         async function fetchdata() {
-            let result = await axios.get(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBCbUkPZaZiw0Wb1neQV_RnIiLEgYCh1Tc&cx=12710e7109467d160&q=${query}`);
+            let result = await axios.get(`https://www.googleapis.com/customsearch/v1?key=process.env.API_KEY1&q=${query}`);
             return result;
         }
 
@@ -94,7 +94,7 @@ const SearchResultPage = () => {
 
         // fetching the search data from the google
 
-        let result = await axios.get(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBCbUkPZaZiw0Wb1neQV_RnIiLEgYCh1Tc&cx=12710e7109467d160&q=${func_query}`);
+        let result = await axios.get(`https://www.googleapis.com/customsearch/v1?key=process.env.API_KEY&q=${func_query}`);
         //console.log(result.data);
         set_search_result(result.data.items);
 
